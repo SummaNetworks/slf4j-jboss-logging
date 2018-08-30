@@ -6,7 +6,7 @@ To use slf4j 1.7.2 instead of current one 1.5.x go to your jboss-5.1.0.GA/common
 slf4j-api.jar
 slf4j-jboss-logging.jar
 
-for
+with:
 
 slf4j-api-1.7.2.jar
-this compiled jar.
+this compiled jar. (switch first to summa-version branch)
