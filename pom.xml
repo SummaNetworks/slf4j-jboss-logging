@@ -78,7 +78,7 @@
                 <configuration>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <tagNameFormat>@{project.version}</tagNameFormat>
-                    <releaseProfiles>release</releaseProfiles>
+                    <!-- releaseProfiles>release</releaseProfiles -->
                     <goals>deploy</goals>
                 </configuration>
             </plugin>
