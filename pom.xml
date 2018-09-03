@@ -29,7 +29,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jboss.slf4j</groupId>
     <artifactId>slf4j-jboss-logging</artifactId>
-    <version>1.0.4.Summa</version>
+    <version>1.0.4.Summa-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>slf4j to JBoss Logging Adapter</name>
     <url>http://www.jboss.org</url>
@@ -61,11 +61,51 @@
     </dependencies>
 
     <build>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-webdav-jackrabbit</artifactId>
+                <version>1.0</version>
+            </extension>
+        </extensions>
         <plugins>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>onevox</id>
+            <name>Onevox repository</name>
+            <url>http://devel.onevox.io/repository</url>
+        </repository>
+        <repository>
+            <id>snapshots</id>
+            <url>https://devel.onevox.io/repository-snapshots</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>onevox</id>
+            <name>Onevox Repository</name>
+            <url>dav:https://devel.onevox.io/repository</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshot</id>
+            <name>Onevox Repository</name>
+            <url>dav:https://devel.onevox.io/repository-snapshots</url>
+        </snapshotRepository>
+        <site>
+            <id>onevox</id>
+            <name>Onevox archive</name>
+            <url>dav:https://devel.onevox.io/archive/${project.artifactId}/${project.version}</url>
+        </site>
+    </distributionManagement>
 
 </project>
