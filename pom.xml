@@ -72,6 +72,15 @@
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
             </plugin>
+            <plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <tagNameFormat>@{project.version}</tagNameFormat>
+                    <releaseProfiles>release</releaseProfiles>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
@@ -108,4 +117,11 @@
         </site>
     </distributionManagement>
 
+
+    <scm>
+        <connection>scm:git:https://github.com/SummaNetworks/slf4j-jboss-logging/</connection>
+        <developerConnection>scm:git:https://github.com/SummaNetworks/slf4j-jboss-logging/</developerConnection>
+        <url>https://github.com/SummaNetworks/slf4j-jboss-logging/</url>
+        <tag>HEAD</tag>
+    </scm>
 </project>
